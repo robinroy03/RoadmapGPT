@@ -1,7 +1,7 @@
 # RoadmapGPT
 Get a roadmap and never get lost again.
 
-### some work i did today (22/06/23 1 am IST)
+### some work i did today
 
 this is how it'll kinda end up looking like, tbh i like the ui/ux .. it's minimalistic and good enough for some 10 lines of py script.
 if you can flex your development skills, make a PR (pls do)
