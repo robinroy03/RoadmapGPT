@@ -1,6 +1,13 @@
 # RoadmapGPT
 Get a roadmap and never get lost again.
 
+# some work i did today (22/06/23 1 am IST)
+
+this is how it'll kinda end up looking like, tbh i like the ui/ux .. it's minimalistic and good enough for some 10 lines of py script.
+if you can flex your development skills, make a PR (pls do)
+![image](https://github.com/robinroy03/RoadmapGPT/assets/115863770/b8bb11a8-4e65-43dd-83d3-61d7874fa2c0)
+
+
 # todo
 
 im lazy, but you're not (hopefully).
