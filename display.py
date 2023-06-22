@@ -4,7 +4,7 @@ import streamlit as st
 import graphviz
 
 st.sidebar.text_input(label = "Enter your OpenAI API Key", placeholder = "Enter the key here ..")
-
+st.sidebar.text_input(label = "Enter a domain to generate roadmap", placeholder = "I want to make cool webapps ..")
 
 # Create a graphlib graph object
 graph = graphviz.Digraph()
