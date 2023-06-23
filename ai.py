@@ -5,7 +5,7 @@ import openai
 from dotenv import load_dotenv
 from os import getenv
 
-from utils import sys_prompt
+from utils.utils import sys_prompt
 
 # TOKEN ACCESS
 load_dotenv()
