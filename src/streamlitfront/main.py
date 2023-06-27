@@ -14,7 +14,7 @@ def display(content):
 
 with st.form("Input form"):
     with st.sidebar:
-        api_key = st.sidebar.text_input(label = "Enter your OpenAI API Key", placeholder = "Enter the key here ..")
+        api_key = st.sidebar.text_input(label = "Enter your OpenAI API Key", placeholder = "Enter the key here ..", type="password")
         user_prompt = st.sidebar.text_input(label = "Enter a domain to generate roadmap", placeholder = "I want to make cool webapps ..")
         submitted = st.form_submit_button("Submit")
 
