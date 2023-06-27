@@ -1,15 +1,10 @@
-# this module returns the graph node relationships
+"""
+Main LLM entry point. Returns the LLM responses. 
+"""
 
 import openai
 
-from dotenv import load_dotenv
-from os import getenv
-
-from ..utils.utils import sys_prompt
-
-# TOKEN ACCESS
-load_dotenv()
-openai.api_key = str(getenv("TOKEN"))
+from src.roadmapgpt.utils.utils import sys_prompt
 
 def get_completion(messages):
     response = openai.ChatCompletion.create(
@@ -23,7 +18,8 @@ messages = [
     {'role' : 'system', 'content' : sys_prompt},    # SYSTEM PROMPT
 ]
 
-def getOutput(user_prompt : str):
+def getOutput(user_prompt : str, key : str):
+    openai.api_key = key
     messages.append({'role' : 'user', 'content' : user_prompt})
     sysOutput = get_completion(messages)
 
