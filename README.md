@@ -10,3 +10,10 @@ Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized
 - [ ] Improve the backend with better prompts, asking the user to give topics he is familiar with already to make it more customizable.
 
 The frontend is okayish, it is not necessary to overdo it, but minimalistic UI/UX designs are appreciated. Also will need a better frontend when more complicated user inputs are to be taken.
+
+## How to run
+
+Go to the root directory and type 
+```
+$python -m streamlit run src/streamlitfront/main.py
+```
