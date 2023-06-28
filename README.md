@@ -1,23 +1,19 @@
 # RoadmapGPT
-Get a roadmap and never get lost again. Basically, the app aims to give you a customized and comprehensive roadmap for all topics, helping you learn faster and better. See the image below for some ideas. Also, try this [bot I made](https://poe.com/Roadmap) to better understand what this is. I believe that if done properly, this could be useful rather than "yet-another-useless-API-wrapper"
+Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized and comprehensive roadmap for all topics, helping you learn faster and better. See the image below for some ideas. Also, try this [bot I made](https://poe.com/Roadmap) to better understand what this is. I believe that if done properly, this could be useful rather than "yet-another-useless-API-wrapper"
 
-### some work i did today
+![image](https://github.com/robinroy03/RoadmapGPT/assets/115863770/6e59f80c-41cd-43fa-a642-002f808248e3)
 
-this is how it'll kinda end up looking like, tbh i like the ui/ux .. it's minimalistic and good enough for some 10 lines of py script.
-if you can flex your development skills, make a PR (pls do)
-![image](https://github.com/robinroy03/RoadmapGPT/assets/115863770/42510ea7-6163-43f4-8522-2ba27fed5538)
+## TODO
 
+- [ ] Host the website (will do tomorrow).
+- [ ] A better graph rendering (If you're a js developer and interested, make a PR)
+- [ ] Improve the backend with better prompts, asking the user to give topics he is familiar with already to make it more customizable.
 
-# todo
+The frontend is okayish, it is not necessary to overdo it, but minimalistic UI/UX designs are appreciated. Also will need a better frontend when more complicated user inputs are to be taken.
 
-im lazy, but you're not (hopefully).
+## How to run
 
-the plan is to make this thing better by better prompting, maybe langchain could help. idk should see.
-also we could get this thing running with streamlit or flet. 
-
-
-
-(i had this repo as private for so long for no real reason, idk why. I'm pretty sure this is a good thing to work on for fun)
-
-- i'll contribute to this after my uni finals.
-  ideas as welcomed. we're just having fun here.
+Go to the root directory and type 
+```
+$python -m streamlit run src/streamlitfront/main.py
+```
