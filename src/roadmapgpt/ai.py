@@ -14,11 +14,10 @@ def get_completion(messages):
     )
     return response
 
-messages = [
-    {'role' : 'system', 'content' : sys_prompt},    # SYSTEM PROMPT
-]
-
 def getOutput(user_prompt : str, key : str):
+    messages = [
+    {'role' : 'system', 'content' : sys_prompt},    # SYSTEM PROMPT
+    ]
     openai.api_key = key
     messages.append({'role' : 'user', 'content' : user_prompt})
     sysOutput = get_completion(messages)
