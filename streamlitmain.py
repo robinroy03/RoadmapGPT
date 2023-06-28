@@ -6,4 +6,6 @@
 from subprocess import Popen
 import sys
 
-Popen([f"{sys.executable}", '-m', 'streamlit', 'run', 'src/streamlitfront/main.py'])
+process = Popen([f"{sys.executable}", '-m', 'streamlit', 'run', 'src/streamlitfront/main.py'])
+
+process.communicate()
