@@ -3,10 +3,9 @@ Renders the website using streamlit. Run this for website.
 """
 
 import streamlit as st
-
 import graphviz
 
-from ..roadmapgpt import ai    # exposes the LLM endpoints to streamlit 
+from src.roadmapgpt import ai    # exposes the LLM endpoints to streamlit 
 
 def display(content):
     graph = graphviz.Digraph()
