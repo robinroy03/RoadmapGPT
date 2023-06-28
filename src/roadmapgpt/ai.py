@@ -4,7 +4,7 @@ Main LLM entry point. Returns the LLM responses.
 
 import openai
 
-from src.roadmapgpt.utils.utils import sys_prompt
+from src.roadmapgpt.utils import sys_prompt
 
 def get_completion(messages):
     response = openai.ChatCompletion.create(
