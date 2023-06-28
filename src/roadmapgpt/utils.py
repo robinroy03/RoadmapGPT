@@ -9,7 +9,7 @@ For example, when a user prompt "Data Structures and Algorithms", you should ret
 Example: 
 The format you must return it is (and only return this, no other text):
 
-digraph{ArraysandHashing->TwoPointers ArraysandHashing->Stack TwoPointers->BinarySearch TwoPointers->SlidingWindow}
+ArraysandHashing->TwoPointers ArraysandHashing->Stack TwoPointers->BinarySearch TwoPointers->SlidingWindow
 
 Keep the graph broad and concise, go over all the major topics from that domain. Remember to only return in the specified format.
 """

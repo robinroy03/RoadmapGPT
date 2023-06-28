@@ -9,7 +9,7 @@ from src.roadmapgpt import ai    # exposes the LLM endpoints to streamlit
 
 def display(content):
     graph = graphviz.Digraph()
-    st.graphviz_chart(content.choices[0].message["content"])
+    st.graphviz_chart(f"digraph{{content.choices[0].message['content']}}")
 
 with st.form("Input form"):
     with st.sidebar:
