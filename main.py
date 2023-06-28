@@ -9,8 +9,8 @@ from src.roadmapgpt import ai    # exposes the LLM endpoints to streamlit
 
 def display(content):
     graph = graphviz.Digraph()
-    st.graphviz_chart(f"digraph{{content.choices[0].message['content']}}")
-
+    st.graphviz_chart(f"digraph{{{content.choices[0].message['content']}}}")
+    print(f"digraph{{{content.choices[0].message['content']}}}")
 with st.form("Input form"):
     with st.sidebar:
         api_key = st.sidebar.text_input(label = "Enter your OpenAI API Key", placeholder = "Enter the key here ..", type="password")
