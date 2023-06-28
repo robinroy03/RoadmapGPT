@@ -5,15 +5,15 @@ Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized
 
 ## TODO
 
-- [ ] Host the website (will do tomorrow).
+- [X] Host the website 
 - [ ] A better graph rendering (If you're a js developer and interested, make a PR)
 - [ ] Improve the backend with better prompts, asking the user to give topics he is familiar with already to make it more customizable.
-
-The frontend is okayish, it is not necessary to overdo it, but minimalistic UI/UX designs are appreciated. Also will need a better frontend when more complicated user inputs are to be taken.
 
 ## How to run
 
 Go to the root directory and type 
 ```
-$python -m streamlit run src/streamlitfront/main.py
+$streamlit run main.py
 ```
+
+The basic version of the application is written with streamlit. It'll be a lot more flexible if done with js.
