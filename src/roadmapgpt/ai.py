@@ -12,14 +12,15 @@ def get_completion(messages):
         messages = messages,
         temperature = 0
     )
+    
     return response
 
 def getOutput(user_prompt : str, key : str):
-    messages = [
-    {'role' : 'system', 'content' : sys_prompt},    # SYSTEM PROMPT
-    ]
     openai.api_key = key
+    
+    messages = [{'role' : 'system', 'content' : sys_prompt}]
     messages.append({'role' : 'user', 'content' : user_prompt})
+    
     sysOutput = get_completion(messages)
 
     return sysOutput
