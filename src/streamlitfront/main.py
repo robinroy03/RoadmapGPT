@@ -6,7 +6,7 @@ import streamlit as st
 
 import graphviz
 
-from src.roadmapgpt import ai    # exposes the LLM endpoints to streamlit 
+from ..roadmapgpt import ai    # exposes the LLM endpoints to streamlit 
 
 def display(content):
     graph = graphviz.Digraph()
