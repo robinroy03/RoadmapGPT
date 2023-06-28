@@ -4,5 +4,6 @@
 # TODO: this is too hacky, fix when a fix is available
 
 from subprocess import Popen
+import sys
 
-Popen(['python', '-m', 'streamlit', 'run', 'src/streamlitfront/main.py'])
+Popen([f"{sys.executable}", '-m', 'streamlit', 'run', 'src/streamlitfront/main.py'])
