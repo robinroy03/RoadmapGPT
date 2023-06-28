@@ -19,4 +19,5 @@ with st.form("Input form"):
 
     if submitted and api_key != '' and user_prompt != '':
         llm_output = ai.getOutput(user_prompt, api_key)
+        st.sidebar.write(llm_output)
         display(llm_output)
