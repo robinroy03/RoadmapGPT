@@ -6,7 +6,8 @@ Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized
 ## TODO
 
 - [X] Host the website 
-- [ ] A better graph rendering (If you're a js developer and interested, make a PR)
+- [X] ~~A better graph rendering (If you're a js developer and interested, make a PR)~~ 
+Now we have a mermaid.js rendering done. But it got this weird rectangle in the graph for some reason. Got to fix that.
 - [ ] Improve the backend with better prompts, asking the user to give topics he is familiar with already to make it more customizable.
 
 ## How to run
