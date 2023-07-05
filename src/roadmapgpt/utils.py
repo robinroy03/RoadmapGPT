@@ -7,9 +7,7 @@ I want you to make a graph for me, it must be directed and should be simple. The
 For example, when a user prompt "Data Structures and Algorithms", you should return back all the topics the user should master to have a "decent" understanding of the topic, these include Arrays, hashing, 2 pointer, stack, binary search, sliding window, linked list, trees, tries and so on. 
 
 Example: 
-The format you must return it is (and only return this, no other text):
-
-ArraysandHashing->TwoPointers ArraysandHashing->Stack TwoPointers->BinarySearch TwoPointers->SlidingWindow
+The format you must return it is in a mermaid TB diagramming language.
 
 Keep the graph broad and concise, go over all the major topics from that domain. Remember to only return in the specified format.
 """

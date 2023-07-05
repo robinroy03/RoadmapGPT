@@ -3,18 +3,32 @@ Renders the website using streamlit. Run this for website.
 """
 
 import streamlit as st
-import graphviz
+import streamlit.components.v1 as components
 
 from src.roadmapgpt import ai    # exposes the LLM endpoints to streamlit 
 
 api_key = st.secrets.TOKEN
 
+def mermaid(code: str) -> None:
+    # Doing with a mermaid.js code I found from the web. It does what it should and I won't touch this again for some time. 
+    
+    components.html(
+        f"""
+        <pre class="mermaid">
+            {code}
+        </pre>
+
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({{ startOnLoad: true }});
+        </script>
+        """,
+        # TODO : There must be a better way, something like pinch to zoom. Now the website is huge when rendered. 
+        width = 5000, height = 5000
+    )
+
 def display(content):
-
-    # TODO : we can't zoom this. If the generated diagram is too broad, it's almost impossible to figure out anything from it. 
-
-    graph = graphviz.Digraph()
-    st.graphviz_chart(f"digraph{{{content.choices[0].message['content']}}}")
+    mermaid(content.choices[0].message['content'])
 
 with st.sidebar:
     st.markdown("""
@@ -35,7 +49,7 @@ with st.form("Input form"):
 with st.sidebar:
     st.markdown("""
         ---
-        
+
         We are Open Source!\n
         To contribute, please see the [github repo](https://github.com/robinroy03/RoadmapGPT) 
     """)
