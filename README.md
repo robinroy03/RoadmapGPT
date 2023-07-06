@@ -1,7 +1,7 @@
 # RoadmapGPT
 Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized and comprehensive roadmap for all topics, helping you learn faster and better. See the image below for some ideas. Also, try this [bot I made](https://poe.com/Roadmap) to better understand what this is. I believe that if done properly, this could be useful rather than "yet-another-useless-API-wrapper"
 
-![image](https://github.com/robinroy03/RoadmapGPT/assets/115863770/6e59f80c-41cd-43fa-a642-002f808248e3)
+![image](https://github.com/robinroy03/RoadmapGPT/assets/115863770/1a39d6f0-54fe-4cd2-9cf6-0188d135d0b2)
 
 ## TODO
 
