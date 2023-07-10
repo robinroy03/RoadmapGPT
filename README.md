@@ -9,6 +9,8 @@ Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized
 - [X] ~~A better graph rendering (If you're a js developer and interested, make a PR)~~ 
 Now we have a mermaid.js rendering done. But it got this weird rectangle in the graph for some reason. Got to fix that.
 - [ ] Improve the backend with better prompts, asking the user to give topics he is familiar with already to make it more customizable.
+- [ ] We might use an LLM to evaluate the output 
+- [ ] Will need to develop some parsers for the LLM output
 
 ## How to run
 
