@@ -11,6 +11,7 @@ Now we have a mermaid.js rendering done. But it got this weird rectangle in the 
 - [ ] Improve the backend with better prompts, asking the user to give topics he is familiar with already to make it more customizable.
 - [ ] We might use an LLM to evaluate the output 
 - [ ] Will need to develop some parsers for the LLM output
+- [ ] Adding a google sheets to store all user-prompts would be a good idea
 
 ## How to run
 
