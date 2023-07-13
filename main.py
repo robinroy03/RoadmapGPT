@@ -6,6 +6,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 from src.roadmapgpt import ai    # exposes the LLM endpoints to streamlit 
+from src.roadmapgpt.utils import (output_sanitizer, dict_to_mermaid)
 
 api_key = st.secrets.TOKEN
 
@@ -28,7 +29,11 @@ def mermaid(code: str) -> None:
     )
 
 def display(content):
-    mermaid(content.choices[0].message['content'])
+    output = content.choices[0].message['content']
+    output = output_sanitizer(output)
+    output = dict_to_mermaid(output)
+
+    mermaid(output)
 
 with st.sidebar:
     st.markdown("""
@@ -44,11 +49,16 @@ with st.form("Input form"):
 
     if submitted and user_prompt != '':
         llm_output = ai.getOutput(user_prompt, api_key)
-        print(llm_output)
         display(llm_output)
 
 with st.sidebar:
     st.markdown("""
+        ---
+                
+        __General Tips:__\n
+        If the output fails to parse, try a similar sounding different prompt.\n
+        Try Machine Learning advanced, introduction to c++ and so on to get personalized roadmaps.
+                
         ---
 
         We are Open Source!\n
