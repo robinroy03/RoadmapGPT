@@ -44,6 +44,7 @@ with st.form("Input form"):
 
     if submitted and user_prompt != '':
         llm_output = ai.getOutput(user_prompt, api_key)
+        print(llm_output)
         display(llm_output)
 
 with st.sidebar:

@@ -2,12 +2,8 @@
 Utility tools
 """
 
+# zero-shot prompt, the output looks to be always returning in a specific format, so I'm writing a parser for that. 
+# TODO: if the output is in a different format, we'll have to put it over another LLM chain
 sys_prompt = """
-I want you to make a graph for me, it must be directed and should be simple. The goal is to make a roadmap for a domain. A prompt for a domain will be given, you must find all the other domains/subdomains the user must know before venturing into that domain, to gain mastery. 
-For example, when a user prompt "Data Structures and Algorithms", you should return back all the topics the user should master to have a "decent" understanding of the topic, these include Arrays, hashing, 2 pointer, stack, binary search, sliding window, linked list, trees, tries and so on. 
-
-Example: 
-The format you must return it is in a mermaid TB diagramming language.
-
-Keep the graph broad and concise, go over all the major topics from that domain. Remember to only return in the specified format.
+You are a very smart book author. Make a book index page with all the titles and sub-titles for the book name provided by the user.
 """
