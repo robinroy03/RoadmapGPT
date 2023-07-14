@@ -1,17 +1,14 @@
 # RoadmapGPT
-Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized and comprehensive roadmap for all topics, helping you learn faster and better. See the image below for some ideas. Also, try this [bot I made](https://poe.com/Roadmap) to better understand what this is. I believe that if done properly, this could be useful rather than "yet-another-useless-API-wrapper"
+Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized and comprehensive roadmap for all topics, helping you learn faster and better. RoadmapGPT aims to be an LLM alternative to [roadmap.sh](https://roadmap.sh).
 
-![image](https://github.com/robinroy03/RoadmapGPT/assets/115863770/1a39d6f0-54fe-4cd2-9cf6-0188d135d0b2)
+![image](https://github.com/robinroy03/RoadmapGPT/assets/115863770/0b4460a9-80b1-4032-ae38-31990ea0aecb)
 
 ## TODO
 
-- [X] Host the website 
-- [X] ~~A better graph rendering (If you're a js developer and interested, make a PR)~~ 
-Now we have a mermaid.js rendering done. But it got this weird rectangle in the graph for some reason. Got to fix that.
-- [ ] Improve the backend with better prompts, asking the user to give topics he is familiar with already to make it more customizable.
-- [ ] We might use an LLM to evaluate the output 
-- [ ] Will need to develop some parsers for the LLM output
-- [ ] Adding a google sheets to store all user-prompts would be a good idea
+- [X] Make a website which is comparable to [roadmap.sh](https://roadmap.sh) in output.
+- [X] Parsers to parse the output.
+- [ ] A Google sheet to store all user prompts.
+- [ ] There is this weird rectangle in the output, got to fix that bug.
 
 ## How to run
 
