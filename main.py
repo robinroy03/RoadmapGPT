@@ -31,9 +31,14 @@ def mermaid(code: str) -> None:
 def display(content):
     output = content.choices[0].message['content']
     output = output_sanitizer(output)
-    output = dict_to_mermaid(output)
 
-    mermaid(output)
+    if output == {}:
+        st.write("""
+                 Output Parsing Error. Try again with a similar sounding prompt. 
+                """)
+    else:
+        output = dict_to_mermaid(output)
+        mermaid(output)
 
 with st.sidebar:
     st.markdown("""
