@@ -27,13 +27,13 @@ Example:
 
 
 
-def store_to_gsheet(prompt, error:bool = False, **credentials):
+def store_to_gsheet(prompt, user_prompt, error:bool = False, **credentials):
     """
     Storing the value to google sheets
     """
     """
     Format:
-    DATE | TIME | TotalTokens | PROMPT | ERROR | LLMOutputDump
+    DATE | TIME | TotalTokens | User Prompt | PROMPTOutput | ERROR | LLMOutputDump
     """
 
     gc = gspread.service_account_from_dict(credentials)
@@ -41,9 +41,9 @@ def store_to_gsheet(prompt, error:bool = False, **credentials):
 
     cur_date, cur_time = datetime.now(timezone("Asia/Kolkata")).strftime("%d/%m/%Y,%H:%M:%S").split(",")
     total_token = prompt.usage.total_tokens
-    user_prompt = prompt.choices[0].message['content']
+    promptoutput = prompt.choices[0].message['content']
 
-    sh.append_row([cur_date, cur_time, total_token, user_prompt, error, str(prompt)])
+    sh.append_row([cur_date, cur_time, total_token, user_prompt, promptoutput, error, str(prompt)])
 
 
 

@@ -29,7 +29,7 @@ def mermaid(code: str) -> None:
         width = 5000, height = 5000
     )
 
-def display(content):
+def display(user_prompt, content):
     output = content.choices[0].message['content']
     output = output_sanitizer(output)
 
@@ -38,10 +38,10 @@ def display(content):
                  Output Parsing Error. Try again with a similar sounding prompt. 
                 """)
         
-        store_to_gsheet(content, error = True, **st.secrets.gspread_credentials)        # passing google sheet credentials
+        store_to_gsheet(content, user_prompt = user_prompt, error = True, **st.secrets.gspread_credentials)        # passing google sheet credentials
     else:
         output = dict_to_mermaid(output)
-        store_to_gsheet(content, error = False, **st.secrets.gspread_credentials)    
+        store_to_gsheet(content, user_prompt = user_prompt, error = False, **st.secrets.gspread_credentials)    
         mermaid(output)
 
 with st.sidebar:
@@ -58,7 +58,7 @@ with st.form("Input form"):
 
     if submitted and user_prompt != '':
         llm_output = ai.getOutput(user_prompt, api_key)
-        display(llm_output)
+        display(user_prompt, llm_output)
 
 with st.sidebar:
     st.markdown("""
