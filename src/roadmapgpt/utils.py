@@ -1,7 +1,10 @@
 """
 Utility tools
 """
+import gspread  # to manipulate the google sheet
+
 import json
+from datetime import datetime
 
 # zero-shot prompt
 # TODO: Experiment with function-calling api. May return better quality output.
@@ -21,6 +24,28 @@ Example:
 }
 """
 
+
+
+def store_to_gsheet(prompt, error:bool = False, **credentials):
+    """
+    Storing the value to google sheets
+    """
+    """
+    Format:
+    DATE | TIME | TotalTokens | PROMPT | ERROR | LLMOutputDump
+    """
+
+    gc = gspread.service_account_from_dict(credentials)
+    sh = gc.open("RoadmapGPT").sheet1
+
+    cur_date, cur_time = datetime.now().strftime("%d/%m/%Y,%H:%M:%S").split(",")
+    total_token = prompt.usage.total_tokens
+    user_prompt = prompt.choices[0].message['content']
+
+    sh.append_row([cur_date, cur_time, total_token, user_prompt, error, str(prompt)])
+
+
+
 def output_sanitizer(prompt: str) -> dict:
     """
     return dictionary from llm output
@@ -35,6 +60,8 @@ def output_sanitizer(prompt: str) -> dict:
         return {}
     
     return output
+
+
 
 def dict_style_changer(file: dict) -> dict: 
     """
@@ -84,5 +111,3 @@ if __name__ == "__main__":
     
     test1 = output_sanitizer(test1)
     assert(type(test1)) == dict, "Output should be a dict"
-
-    print(dict_to_mermaid(test1))
