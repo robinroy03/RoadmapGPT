@@ -53,7 +53,7 @@ with st.sidebar:
 
 with st.form("Input form"):
     with st.sidebar:
-        user_prompt = st.sidebar.text_input(label = "Enter a domain to generate roadmap", placeholder = "Machine Learning, C++ ..")
+        user_prompt = st.sidebar.text_input(label = "Enter a domain to generate roadmap", placeholder = "Machine Learning, Chess ..")
         submitted = st.form_submit_button("Submit")
 
     if submitted and user_prompt != '':
