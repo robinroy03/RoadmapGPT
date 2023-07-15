@@ -5,6 +5,7 @@ import gspread  # to manipulate the google sheet
 
 import json
 from datetime import datetime
+from pytz import timezone
 
 # zero-shot prompt
 # TODO: Experiment with function-calling api. May return better quality output.
@@ -38,7 +39,7 @@ def store_to_gsheet(prompt, error:bool = False, **credentials):
     gc = gspread.service_account_from_dict(credentials)
     sh = gc.open("RoadmapGPT").sheet1
 
-    cur_date, cur_time = datetime.now().strftime("%d/%m/%Y,%H:%M:%S").split(",")
+    cur_date, cur_time = datetime.now(timezone("Asia/Kolkata")).strftime("%d/%m/%Y,%H:%M:%S").split(",")
     total_token = prompt.usage.total_tokens
     user_prompt = prompt.choices[0].message['content']
 
