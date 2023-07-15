@@ -5,7 +5,7 @@ Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized
 
 ## TODO
 
-- [X] Make a website which is comparable to [roadmap.sh](https://roadmap.sh) in output.
+- [X] Make a website which outputs something good enough.
 - [X] Parsers to parse the output.
 - [X] A Google sheet to store all user prompts.
 - [ ] There is this weird rectangle in the output, got to fix that bug.
