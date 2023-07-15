@@ -6,13 +6,14 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 from src.roadmapgpt import ai    # exposes the LLM endpoints to streamlit 
-from src.roadmapgpt.utils import (output_sanitizer, dict_to_mermaid)
+from src.roadmapgpt.utils import (output_sanitizer, dict_to_mermaid, store_to_gsheet)
 
 api_key = st.secrets.TOKEN
 
 def mermaid(code: str) -> None:
-    # Doing with a mermaid.js code I found from the web. It does what it should and I won't touch this again for some time. 
-    
+    """
+    Renders with mermaid.js, builds an html component over streamlit and render js over it.
+    """    
     components.html(
         f"""
         <pre class="mermaid">
@@ -36,8 +37,11 @@ def display(content):
         st.write("""
                  Output Parsing Error. Try again with a similar sounding prompt. 
                 """)
+        
+        store_to_gsheet(content, error = True, **st.secrets.gspread_credentials)        # passing google sheet credentials
     else:
         output = dict_to_mermaid(output)
+        store_to_gsheet(content, error = False, **st.secrets.gspread_credentials)    
         mermaid(output)
 
 with st.sidebar:
