@@ -1,3 +1,5 @@
 .env
 __pycache__
 secrets.toml
+.streamlit
+credentials.json
