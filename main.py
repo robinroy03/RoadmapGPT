@@ -38,7 +38,7 @@ def display(user_prompt, content):
         store_to_gsheet(content, user_prompt=user_prompt, error=True, **st.secrets.gspread_credentials)
     else:
         output = dict_to_mermaid(output)
-        store_to_gsheet(content, user_prompt = user_prompt, error = True, **st.secrets.gspread_credentials)        # passing google sheet credentials
+        store_to_gsheet(content, user_prompt = user_prompt, error = False, **st.secrets.gspread_credentials)        # passing google sheet credentials
         mermaid(output)
 
 st.set_page_config(layout="wide")
