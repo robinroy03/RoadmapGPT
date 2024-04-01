@@ -1,5 +1,8 @@
 # RoadmapGPT
-Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized and comprehensive roadmap for all topics, helping you learn faster and better. RoadmapGPT aims to be an LLM alternative to [roadmap.sh](https://roadmap.sh). `[p.s., currently roadmap.sh also have an LLM for generating roadmaps, but it started recently around march. I made RoadmapGPT ~8 months ago.]`
+Get a roadmap and never get lost again. RoadmapGPT aims to give you a customized and comprehensive roadmap for all topics, helping you learn faster and better. RoadmapGPT aims to be an LLM alternative to [roadmap.sh](https://roadmap.sh).
+
+
+[p.s., currently roadmap.sh also have an LLM for generating roadmaps, but it started recently around [March](https://www.linkedin.com/feed/update/urn:li:activity:7172950915681828864/). I made RoadmapGPT ~8 months ago.]
 
 ![image](https://github.com/robinroy03/RoadmapGPT/assets/115863770/0b4460a9-80b1-4032-ae38-31990ea0aecb)
 
