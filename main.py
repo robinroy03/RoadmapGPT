@@ -5,23 +5,23 @@ Renders the website using streamlit. Run this for website.
 import streamlit as st
 import streamlit.components.v1 as components
 
-from src.roadmapgpt import ai    # exposes the LLM endpoints to streamlit 
+from src.roadmapgpt import ai  # exposes the LLM endpoints to streamlit 
 from src.roadmapgpt.utils import (output_sanitizer, dict_to_mermaid, store_to_gsheet)
 
 api_key = st.secrets.TOKEN
 
 def mermaid(code: str) -> None:
     """
-    Renders with mermaid.js, builds an html component over streamlit and render js over it.
-    """    
-    components.html(
+    Renders a Mermaid diagram using st.write.
+    """
+    st.write(
         f"""
         <pre class="mermaid">
             {code}
         </pre>
 
         <script type="module">
-            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs';
             mermaid.initialize({{ startOnLoad: true }});
         </script>
         """,
@@ -34,15 +34,14 @@ def display(user_prompt, content):
     output = output_sanitizer(output)
 
     if output == {}:
-        st.write("""
-                 Output Parsing Error. Try again with a similar sounding prompt. 
-                """)
-        
-        store_to_gsheet(content, user_prompt = user_prompt, error = True, **st.secrets.gspread_credentials)        # passing google sheet credentials
+        st.write("Output Parsing Error. Try again with a similar sounding prompt.")
+        store_to_gsheet(content, user_prompt=user_prompt, error=True, **st.secrets.gspread_credentials)
     else:
         output = dict_to_mermaid(output)
-        store_to_gsheet(content, user_prompt = user_prompt, error = False, **st.secrets.gspread_credentials)    
+        store_to_gsheet(content, user_prompt = user_prompt, error = False, **st.secrets.gspread_credentials)        # passing google sheet credentials
         mermaid(output)
+
+st.set_page_config(layout="wide")
 
 with st.sidebar:
     st.markdown("""
